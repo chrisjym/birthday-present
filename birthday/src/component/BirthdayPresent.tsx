@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Gift } from "lucide-react";
+import image1 from "../assets/IMG_0087.jpeg";
+import image2 from "../assets/IMG_0200.jpeg";
+import image3 from "../assets/IMG_0386.jpeg";
+import image4 from "../assets/IMG_2548.jpeg";
+import image5 from "../assets/IMG_2711.jpeg";
+import image6 from "../assets/IMG_5716.jpeg";
+import image7 from "../assets/IMG_8291.jpeg";
 
 const BirthdayPresent = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -8,13 +15,7 @@ const BirthdayPresent = () => {
   const [isSpinning, setIsSpinning] = useState(false);
 
   // EASILY CHANGE THESE IMAGES!
-  const images = [
-    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=400&fit=crop", // Cat
-    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&h=400&fit=crop", // Funny dog
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop", // Monkey
-    "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=400&h=400&fit=crop", // Surprised cat
-    "https://images.unsplash.com/photo-1615789591457-74a63395c990?w=400&h=400&fit=crop", // Funny dog with tongue
-  ];
+  const images = [image1, image2, image3, image4, image5, image7, image6];
 
   const handleOpenPresent = () => {
     setIsOpened(true);
@@ -37,7 +38,7 @@ const BirthdayPresent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-700 via-slate-800 to-black flex items-center justify-center overflow-hidden relative">
+    <div className="min-h-screen bg-slate-900 flex items-center justify-center overflow-hidden relative">
       {showConfetti && (
         <div className="absolute inset-0 pointer-events-none z-50">
           {[...Array(80)].map((_, i) => (
@@ -55,11 +56,11 @@ const BirthdayPresent = () => {
                 className="w-4 h-4"
                 style={{
                   backgroundColor: [
-                    "#00D9FF",
-                    "#FF6B00",
-                    "#FFD700",
-                    "#00FF88",
-                    "#FF00FF",
+                    "#A855F7",
+                    "#C084FC",
+                    "#E879F9",
+                    "#F0ABFC",
+                    "#FAE8FF",
                     "#FFFFFF",
                   ][Math.floor(Math.random() * 6)],
                   transform: `rotate(${Math.random() * 360}deg)`,
@@ -75,7 +76,7 @@ const BirthdayPresent = () => {
       {isOpened && (
         <div className="absolute inset-0 flex items-center justify-center animate-zoom-in z-40">
           <div className="text-center px-8">
-            <h1 className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 mb-8 drop-shadow-2xl animate-bounce-slow">
+            <h1 className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-fuchsia-500 mb-8 drop-shadow-2xl animate-bounce-slow">
               HAPPY BIRTHDAY DAD! 🎉
             </h1>
 
@@ -88,15 +89,15 @@ const BirthdayPresent = () => {
               <img
                 src={images[currentImageIndex]}
                 alt="Birthday Surprise"
-                className="w-96 h-96 rounded-3xl shadow-2xl mx-auto object-cover border-8 border-orange-500 ring-8 ring-yellow-400"
+                className="w-96 h-96 rounded-3xl shadow-2xl mx-auto object-cover border-8 border-purple-500 ring-8 ring-fuchsia-400"
               />
             </div>
 
             <p className="text-4xl font-bold text-white mt-8 drop-shadow-lg animate-fade-in">
-              Placeholder Text;
+              Love you Dad
             </p>
-            <p className="text-2xl font-semibold text-orange-400 mt-4 drop-shadow-lg animate-fade-in-delay">
-              Placeholder Text;
+            <p className="text-2xl font-semibold text-purple-400 mt-4 drop-shadow-lg animate-fade-in-delay">
+              One of the greatest to ever do it
             </p>
 
             <button
@@ -105,7 +106,7 @@ const BirthdayPresent = () => {
                 setShowConfetti(false);
                 setIsSpinning(false);
               }}
-              className="mt-8 px-10 py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white font-black text-2xl rounded-xl shadow-2xl hover:scale-110 transition-transform duration-300 hover:rotate-3"
+              className="mt-8 px-10 py-5 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-black text-2xl rounded-xl shadow-2xl hover:scale-110 transition-transform duration-300 hover:rotate-3"
             >
               CLOSE IT UP 🎁
             </button>
@@ -116,7 +117,7 @@ const BirthdayPresent = () => {
       {/* Present Box - Only show when not opened */}
       {!isOpened && (
         <div className="text-center animate-bounce-gentle">
-          <h2 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-12 drop-shadow-2xl">
+          <h2 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400 mb-12 drop-shadow-2xl">
             Click to Open!
           </h2>
 
@@ -127,11 +128,11 @@ const BirthdayPresent = () => {
             {/* Present Box */}
             <div className="relative">
               {/* Box Body */}
-              <div className="w-80 h-80 bg-gradient-to-br from-orange-600 via-red-600 to-orange-800 rounded-3xl shadow-2xl flex items-center justify-center relative overflow-hidden border-8 border-yellow-500">
+              <div className="w-80 h-80 bg-gradient-to-br from-purple-600 via-fuchsia-600 to-purple-800 rounded-3xl shadow-2xl flex items-center justify-center relative overflow-hidden border-8 border-fuchsia-400">
                 {/* Ribbon Vertical */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-full bg-gradient-to-b from-yellow-400 to-yellow-600 shadow-lg"></div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-full bg-gradient-to-b from-fuchsia-300 to-fuchsia-500 shadow-lg"></div>
                 {/* Ribbon Horizontal */}
-                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-20 bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-lg"></div>
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-20 bg-gradient-to-r from-fuchsia-300 to-fuchsia-500 shadow-lg"></div>
 
                 {/* Gift Icon */}
                 <Gift
@@ -153,7 +154,7 @@ const BirthdayPresent = () => {
             <div className="absolute -bottom-8 -right-8 text-6xl animate-pulse animation-delay-900"></div>
           </button>
 
-          <p className="text-3xl font-black text-orange-400 mt-12 drop-shadow-lg animate-pulse">
+          <p className="text-3xl font-black text-purple-400 mt-12 drop-shadow-lg animate-pulse">
             who eez eet?
           </p>
         </div>
